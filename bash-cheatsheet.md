@@ -18,15 +18,15 @@
 
 ### Conditional Statements
   #### Comparison Operators
-    - lt : less than
-    - gt : greater than
-    - eq : equal to
-    - le : less than or equal
-    - ne : not equal to
+  - lt : less than
+  - gt : greater than
+  - eq : equal to
+  - le : less than or equal
+  - ne : not equal to
   #### String Comparisons and Logical Operators
-    - **When comparing using -z or != or = make sure to use double brackets [[]] in the if statements** (not needed when using logical operators like || and &&
-    - != : used for strings 
-    - `-z` : ask if a string is empty
+  - **When comparing using -z or != or = make sure to use double brackets [[]] in the if statements** (not needed when using logical operators like || and &&
+  - != : used for strings 
+  - `-z` : ask if a string is empty
 
 ### Loops
   - `for arg in "$@"; do` end with `done` on same tab as "for"
