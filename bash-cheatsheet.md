@@ -5,7 +5,14 @@
   - `./` : use this before the file name to run the file
   - `@` : means all elements
   - `#` : tells systems to count
-  - `$#` : represents the number of arguments you passed into terminal when running the script
+  - `$@` : all elements (treated like separate entities)
+  - `$*` : all elements (treated like one entity separated by whatever separator usually a space)
+  - `$#` : represents the number of arguments you passed into terminal when running the script'
+  - `$$` : gives the process ID of the current shell
+  - `$0` : holds the name of the script
+  - `$!` : holds the process ID of the last background command
+    - `&` : runs a command in the background (Ex. sleep 2 &) makes the sleep run in the background
+  - `$?` : gives the exit status of the last executed command. 0 typically means success while non-zero numbers indicate an error
 
 ### Variables
   - `result=$(add $num1 $num2)` : this is a command syntax, the first element is a function and the following elements are the arguments to put in that function.         Result stores what is return fromthe function
@@ -19,25 +26,28 @@
   - $1, $2, $3 represent arguments that can be passed in the terminal. (./arguments.sh hello world example --> each world will correlate with each number)
 
 ### Conditional Statements
-  `return 1` : returning a non-zero number indicates an error
-  #### Comparison Operators
-  - lt : less than
-  - gt : greater than
-  - eq : equal to
-  - le : less than or equal
-  - ne : not equal to
-  #### String Comparisons and Logical Operators
-  - **When comparing using -z or != or = make sure to use double brackets [[]] in the if statements** (not needed when using logical operators like || and &&
-  - != : used for strings 
-  - `-z` : ask if a string is empty
-  #### Case Statements
-  - ```
-    case $operation in
-      plus)
-        result=$((num1 + num2))
-        echo "$num1 + $num2 = $result"
-        ;;
-    esac```
+  - `return 1` : returning a non-zero number indicates an error (returns do not exit entire script, just reutrns an error to the caller of the function aka $? is where the variable is stored until another function is called)
+  - `exit 0` : indicates succes (exits terminate the entire script)
+  - `exit 1` : indicates an error
+  - `if [ -e "$filename" ]` : -e tests if the file exists
+    #### Comparison Operators
+    - lt : less than
+    - gt : greater than
+    - eq : equal to
+    - le : less than or equal
+    - ne : not equal to
+    #### String Comparisons and Logical Operators
+    - **When comparing using -z or != or = make sure to use double brackets [[]] in the if statements** (not needed when using logical operators like || and &&
+    - != : used for strings 
+    - `-z` : ask if a string is empty
+    #### Case Statements
+    - ```
+      case $operation in
+        plus)
+          result=$((num1 + num2))
+          echo "$num1 + $num2 = $result"
+          ;;
+      esac```
 
 ### Loops
   - `for arg in "$@"; do` end with `done` on same tab as "for"
@@ -70,3 +80,6 @@
   
     #### Parameters
     - parameters are still used using the arguments -->> $1 $2 $3 etc. **However you specify the arguments in the bash file not the terminal**
+   
+### Trap Command
+  - `trap functionToUse SIGINT SIGTERM` : calls a function when it catches either SIGINT (interrupt) or SIGTERM (termination) signals. SIGINT is usually called with Ctrl+C
