@@ -6,9 +6,10 @@
   - `@` : means all elements
   - `#` : tells systems to count
   - `$#` : represents the number of arguments you passed into terminal when running the script
-  - 
 
-### Common Environment Variables
+### Variables
+  - `result=$(add $num1 $num2)` : this is a command syntax, the first element is a function and the following elements are the arguments to put in that function.         Result stores what is return fromthe function
+  #### Common Environment Variables
   - HOME
   - LOGNAME
   - SHELL
@@ -66,5 +67,6 @@
   - to run a function you just need the function name (no parentheses)
   - functions return either an echoed result or a variable that was declared in the function
   - `local LACAL_VAR="I'm a local variable"` : Local variables can be declared that stay inside the function and are not global
+  
     #### Parameters
     - parameters are still used using the arguments -->> $1 $2 $3 etc. **However you specify the arguments in the bash file not the terminal**
