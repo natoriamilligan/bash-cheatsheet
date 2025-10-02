@@ -30,6 +30,8 @@
   - `exit 0` : indicates succes (exits terminate the entire script)
   - `exit 1` : indicates an error
   - `if [ -e "$filename" ]` : -e tests if the file exists
+    - `-d "$dirname"` : -d check if a directory exists
+    - `-r "$filename"` : checks if a file is readable by the current user
     #### Comparison Operators
     - lt : less than
     - gt : greater than
