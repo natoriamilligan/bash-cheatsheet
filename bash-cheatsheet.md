@@ -30,12 +30,12 @@
   - != : used for strings 
   - `-z` : ask if a string is empty
   #### Case Statements
-  - case $operation in
+  - `case $operation in
       plus)
         result=$((num1 + num2))
         echo "$num1 + $num2 = $result"
         ;;
-    esac
+    esac`
 
 ### Loops
   - `for arg in "$@"; do` end with `done` on same tab as "for"
