@@ -30,11 +30,11 @@
   - != : used for strings 
   - `-z` : ask if a string is empty
   #### Case Statements
-  -case $operation in
-    plus)
-      result=$((num1 + num2))
-      echo "$num1 + $num2 = $result"
-      ;;
+  - case $operation in
+      plus)
+        result=$((num1 + num2))
+        echo "$num1 + $num2 = $result"
+        ;;
     esac
 
 ### Loops
