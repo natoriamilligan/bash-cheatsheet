@@ -13,6 +13,7 @@
   - `$!` : holds the process ID of the last background command
     - `&` : runs a command in the background (Ex. sleep 2 &) makes the sleep run in the background
   - `$?` : gives the exit status of the last executed command. 0 typically means success while non-zero numbers indicate an error
+  - `%` : is a string manipulator `${my_decimal_variable%.*}` : the % changes the variable to an integer, removes everything after the . including the . itself
 
 ### Variables
   - `result=$(add $num1 $num2)` : this is a command syntax, the first element is a function and the following elements are the arguments to put in that function.         Result stores what is return fromthe function
